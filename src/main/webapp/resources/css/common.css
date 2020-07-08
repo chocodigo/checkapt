@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'NanumSquare';
+    src: url(../font/NanumSquare_acR.ttf) format('truetype');
+}
+
+body{
+    text-align: center;
+    font-family: NanumSquare;
+}
+
+table{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.hds-header .mdl-menu__container {
+    z-index: 50;
+    margin: 0 !important;
+}
+
+.hds-logo-image {
+    height: 28px;
+
+}
+
+.hds-header {
+    overflow: visible;
+    background-color: white;
+
+}
+
+.hds-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.hds-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hds-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    justify-content: flex-end;
+    width: 800px;
+}
+
+.hds-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+}
+
+.hds-navigation .mdl-navigation__link:hover {
+    border-bottom: 4px solid #223055;
+}
+
+#view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+}
+
+#apt_insert_form{
+    padding-top: 56px;
+}
+
+.table_box{
+    padding-top: 100px;
+
+}
+.footer{
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    width:100%;
+    padding: 15px 0;
+
+    text-align: center;
+}
+
+.paging_box {
+    text-align: center;
+    width:100%;
+    display: inline-block;
+}
+
+.paging_box ul {
+    font-size: 0;
+    text-align: center;
+    background: #fff;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.paging_box ul li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.paging_box ul li:nth-child(1) {
+    margin-right: 10px;
+}
+
+.paging_box ul li:nth-child(3) {
+    margin-left: 10px;
+}
+
+.paging_box ul li a:last-child span {
+    border: 0;
+}
+
+.paging_box ul li a {
+    display: inline-block;
+}
+
+.paging_box ul li a span {
+    line-height: 36px;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #50617B;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 36px;
+    border-radius: 4px;
+    margin:5px ;
+}
+
+.paging_box ul li a span:hover {
+    background-color: #F1F8FF;
+    color: #297FCA;
+}
+
+.paging_box ul li a span.active {
+    background-color: #232e35;
+    color: #fff;
+}
+
+.paging_box ul li a span i {
+    position: relative;
+    left: -3px;
+    top: 0;
+    color: #50617B;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.board_pagination{
+    text-align: center;
+}

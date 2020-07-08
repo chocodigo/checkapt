@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.taeyang.checkapt.home.HomeMapper">
+    <!--
+        아파트 리스트 받아오는 Query
+    -->
+    <select id="getAptList" resultType="com.taeyang.checkapt.home.HomeVO">
+        SELECT
+        APTT_NAME,
+        APTT_NUMB
+        FROM APT
+        ORDER BY APTT_NUMB
+    </select>
+
+    <!--
+        아파트 입력하는 Query
+    -->
+    <insert id="insertApt" parameterType="com.taeyang.checkapt.home.HomeVO">
+        INSERT INTO apt(
+        APTT_NUMB
+        ,APTT_NAME
+        )
+        VALUES(
+        #{aptt_numb},
+        #{aptt_name}
+        )
+    </insert>
+
+    <!--
+        아파트 PK 생성 Query
+    -->
+    <select id="aptSelectIdxx" resultType="String">
+        SELECT
+        CONCAT(replace(substr(CONVERT(now(),char),3,8),'-',''), 'APT',LPAD(ifnull(max(cast(substr(APTT_NUMB,13,2)as decimal)),0)+1,4,'0')) AS APTT_NUMB
+        FROM apt
+        WHERE 1=1
+        AND SUBSTR(APTT_NUMB,1,6)=replace(substr(CONVERT(now(),char),3,8),'-','')
+    </select>
+
+    <!--
+        아파트 삭제 Query
+    -->
+    <delete id="deleteApt">
+        DELETE
+        FROM apt
+        WHERE
+        aptt_numb = #{aptt_numb}
+    </delete>
+</mapper>
